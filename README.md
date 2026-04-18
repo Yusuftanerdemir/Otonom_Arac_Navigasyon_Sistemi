@@ -18,30 +18,20 @@ Bu model, yerel minimum tuzaklarına düşmeden her zaman matematiksel olarak is
 ## 🛠 Teknik Özellikler ve Yazılım Mimarisi
 Proje, Nesne Yönelimli Programlama (OOP) prensiplerine ve katmanlı mimariye uygun olarak Java dilinde geliştirilmiştir:
 
-- **Modüler Yapı:** `Coordinate` (Veri), `ObstacleSet` (Koleksiyon) ve `SafetyOptimizer` (Algoritma) sınıfları ile katmanlar arası izolasyon sağlanmıştır.
-- **Sıfır Bellek Sızıntısı (Zero Memory Leak):** Optimizasyon döngüsü (Gradient Descent) içerisinde hiçbir şekilde yeni nesne üretimi (allocation) yapılmaz. Tüm hesaplamalar primitif diziler üzerinden gerçekleştirilerek Java Garbage Collector üzerindeki yük sıfıra indirilmiş ve gerçek zamanlı sürüş güvenliği artırılmıştır.
-- **Veri Güvenliği:** Veri modelleri `Immutable` (değiştirilemez) yapıda tasarlanarak multi-threading (çoklu işlem) süreçlerinde veri tutarlılığı garanti altına alınmıştır.
+- **Modüler Yapı:** Coordinate (Veri), ObstacleSet (Koleksiyon) ve SafetyOptimizer (Algoritma) sınıfları ile katmanlar arası izolasyon sağlanmıştır.
+- **Sıfır Bellek Sızıntısı (Zero Memory Leak):** Optimizasyon döngüsü (Gradient Descent) içerisinde hiçbir şekilde yeni nesne üretimi yapılmaz. Tüm hesaplamalar primitif diziler üzerinden gerçekleştirilerek Java Garbage Collector üzerindeki yük sıfıra indirilmiş ve gerçek zamanlı sürüş güvenliği artırılmıştır.
+- **Veri Güvenliği:** Veri modelleri Immutable (değiştirilemez) yapıda tasarlanarak çoklu işlem süreçlerinde veri tutarlılığı garanti altına alınmıştır.
 
 ## 📊 Performans Analizi (Big-O)
-| Aşama | Karmaşıklık | Açıklama |
-| :--- | :--- | :--- |
-| **Eğitim (Sınırı İnşa Etme)** | $O(N^2)$ | İteratif optimizasyon süreci veri setiyle karesel ilişkilidir. |
-| **Çıkarım (Karar Verme)** | $O(1)$ | Sınır bulunduktan sonra engel kontrolü sabit zamanda gerçekleşir. |
+- **Eğitim (Sınırı İnşa Etme):** $O(N^2)$ (İteratif optimizasyon süreci veri setiyle karesel ilişkilidir.)
+- **Çıkarım (Karar Verme):** $O(1)$ (Sınır bulunduktan sonra engel kontrolü sabit zamanda gerçekleşir.)
 
 ## 💻 Kurulum ve Çalıştırma
-1. Depoyu klonlayın:
-   ```bash
-   git clone [https://github.com/kullaniciadi/proje-adiniz.git](https://github.com/kullaniciadi/proje-adiniz.git)
+Java IDE'niz (IntelliJ, Eclipse, VS Code) ile projeyi açın.
+Main.java dosyasını çalıştırın.
 
-2.Java IDE'niz (IntelliJ, Eclipse, VS Code) ile projeyi açın.
-
-3.Main.java dosyasını çalıştırın.
-
-📈 Örnek Çıktı
+## 📈 Örnek Çıktı
 Uygulama çalıştırıldığında konsol üzerinden aşağıdaki veriler üretilir:
-
 Hesaplanan Optimum Sınır Denklemi ($w_1, w_2, b$)
 Hesaplanan Güvenlik Koridoru Genişliği (Birim cinsinden)
 İşlem Süresi (Milisaniye cinsinden)
-
-   
